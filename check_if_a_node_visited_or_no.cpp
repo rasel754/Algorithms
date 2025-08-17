@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
-vector<int> adj_list[1000];
-bool vis[1000];
+vector<int> adj_list[10000];
+bool vis[10000];
 
 void bfs(int src)
 {
@@ -11,17 +11,12 @@ void bfs(int src)
 
     while (!q.empty())
     {
-        // ber kore niye asbo
         int par = q.front();
         q.pop();
 
-        // ota niye kaj korbo
-        cout << par << " ";
-
-        // children gulo push  dibo
         for (int child : adj_list[par])
         {
-            if (vis[child] == false)
+            if (!vis[child])
             {
                 q.push(child);
                 vis[child] = true;
@@ -29,6 +24,7 @@ void bfs(int src)
         }
     }
 };
+
 int main()
 {
     int n, e;
@@ -41,10 +37,17 @@ int main()
         adj_list[a].push_back(b);
         adj_list[b].push_back(a);
     }
+
     memset(vis, false, sizeof(vis));
-    bfs(0);
 
-    
+    int src, des;
+    cin >> src >> des;
 
+    bfs(src);
+
+    if (vis[des])
+        cout << "Yes\n";
+    else
+        cout << "No\n";
     return 0;
 }
