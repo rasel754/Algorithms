@@ -1,1 +1,1 @@
-cycle detected
+no cycle
