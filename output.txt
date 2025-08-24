@@ -1,4 +1,5 @@
-0 3 5 8 
-inf 0 2 5 
-inf inf 0 4 
-inf inf inf 0 
+5
+5
+8
+-1
+3
