@@ -20,7 +20,6 @@ int main()
         adj_mat[a][b] = min(adj_mat[a][b], (long long)c);
     }
 
- 
     for (int k = 1; k <= n; k++)
     {
         for (int i = 1; i <= n; i++)
@@ -35,7 +34,6 @@ int main()
         }
     }
 
-   
     for (int i = 1; i <= n; i++)
     {
         if (adj_mat[i][i] < 0)
